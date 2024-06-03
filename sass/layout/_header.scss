@@ -1,0 +1,61 @@
+.header {
+    box-shadow: rgba(0, 0, 0, 0.25) 0px 4px 4px 0px;
+    flex-direction: column;
+    
+    @include flex-center;
+    justify-content: center;
+
+    & .logo{
+        width: 100%;
+        
+        @include flex-center;
+        justify-content: center;
+    }
+
+    & img{
+        width: 50%;
+        height: 69px;
+    }
+
+    .ville{
+        padding: 15px;
+        box-shadow: inset rgb(0 0 0 / 21%) 0px 2px 3px 0px;
+        width: 100%;
+        flex-direction:row;
+        @include flex-center;
+        justify-content: center;
+        background-color: $background-grey;
+
+        & i{
+            margin-right: 12px;
+            opacity: inherit;
+        }
+
+        & input{
+            border: transparent;
+            font-size: 16px;
+            opacity:initial;
+            background-color: #EAEAEA;
+            font-weight: 500;
+            width: 115px;
+        }
+        & ::placeholder{
+            color: black;
+            font-weight: 500;
+        }
+    }
+}
+@media screen and (min-width: $breakpoint-desktop){
+    
+    .header{
+        background-color: $background-white;
+        .ville{
+            background-color: $background-grey;
+        }
+        & img{
+            width: 15%;
+
+            
+        }
+    }
+}

@@ -1,0 +1,80 @@
+
+@mixin icon-style{
+    color: $icon-color;
+    font-size: 22px;
+  }
+
+  @mixin shadow-style{
+    box-shadow: 0px 5px 10px 0px #8a8a8a52;
+  }
+
+@mixin flex-center {
+    display: flex;
+    align-items: center;
+  }
+
+@mixin padding-section{
+    padding-top: 55px;
+    padding-bottom: 55px;
+  }
+
+  @mixin btn-style{
+    border: none;
+    border-radius: 25px;
+    color: white;
+    background: linear-gradient($second-color 0%, $primary-color 100%);
+  }
+
+  @mixin functioning-style{
+    gap: 10px;
+    width: 91%;
+    background-color: #F6F6F6;
+    height: 80px;
+    border-radius: 25px;
+    counter-increment: item;
+    margin: 34px 34px -10px 42px;
+    display: flex;
+    align-items: center;
+  }
+
+  @mixin functioning-number{
+    clip-path: circle(40%);
+    background-color: $primary-color;
+    padding: 7px;
+    color: $background-white;
+    position: absolute;
+    left: 32px;
+  }
+
+/** Fonts style **/
+@mixin title-font{
+    font-family: $title-font;
+    font-size: 22px;
+  }
+  @mixin h1-style {
+    font-size: 24px;
+    font-family: $main-font;
+    font-weight: 700;
+  }
+  @mixin text-style{
+    font-size: 18px;
+    font-family: $main-font;
+    font-weight: 100;
+  }
+
+  @mixin button-text{
+    font-size: 15px;
+    font-weight: 400;
+    text-decoration: none;
+  }
+
+  @mixin text-nobold{
+    font-size: 15px;
+    font-weight: 100;
+    font-family: $main-font;
+  }
+
+  @mixin h3{
+    font-size: 18px;
+    font-weight: 500;
+  }
