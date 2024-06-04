@@ -1,0 +1,40 @@
+.footer{
+    background-color: $background-black;
+    
+    & img{
+        filter: invert(100%);
+        margin-left: 25px;
+        margin-top: 15px;
+        width: 95px;
+    }
+
+        & a{
+            text-decoration: none;
+            color: $background-white;
+            @include flex-center;
+            justify-content: normal;
+            margin: 8px 0px 0px 24px;
+
+            & i{
+                width: 15px;
+            }
+        }
+
+
+        & #footer__proposer {
+            margin-left: 10px;
+            @include button-text;
+        }
+        & #footer__parternaire{
+            margin-left: 10px;
+            @include button-text;
+        }
+        & #footer__mention{
+            @include text-nobold;
+        }
+        & #footer__contact{
+            @include text-nobold;
+
+        }
+
+    }

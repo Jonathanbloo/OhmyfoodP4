@@ -34,7 +34,7 @@ main {
     height: 69px; }
   .header .ville {
     padding: 15px;
-    /**box-shadow: inset rgb(0 0 0 / 21%) 0px 2px 3px 0px;*/
+    box-shadow: inset rgba(35, 35, 35, 0.218) 0px 2px 3px 0px;
     width: 100%;
     flex-direction: row;
     display: flex;
