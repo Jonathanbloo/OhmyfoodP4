@@ -45,7 +45,14 @@
     position: absolute;
     left: 32px;
   }
-
+  @mixin nouveau-style{
+    padding: 8px 15px 8px 15px;
+    background-color: $background-new;
+    color: $newcolor-text;
+    width: 85px;
+    border-radius: 2px;
+    @include button-text;
+  }
 /** Fonts style **/
 @mixin title-font{
     font-family: $title-font;
