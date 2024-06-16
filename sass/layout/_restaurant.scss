@@ -18,6 +18,32 @@
             position: relative;
             width: 340px;
             margin-bottom: 35px;
+            .restaurant__heart{
+                height: 15px;
+                transform: scaleX(0.9);
+                left: 290px;
+                font-size: 28px;
+                bottom: 53px;
+                position: absolute;
+                & i{
+                    position: absolute;
+                }
+                
+                .fa-solid{
+                    opacity: 0;
+                    cursor: pointer;
+                    &:hover{
+                        background-image: linear-gradient(#ffaae7 0%, #a374dc 100%);
+                        background-clip: text;
+                        -webkit-background-clip: text;
+                        color: transparent;
+                        opacity: 1;
+                        transition: all 0.4S ease-in-out;
+                    }
+                    
+                    
+                }
+            }
         }
     }
 
@@ -35,7 +61,7 @@
     .restaurant__nouveau{
         @include nouveau-style;
         position: absolute;
-        left: 224px;
+        left: 240px;
         top: 15px;
     }
 
@@ -57,35 +83,9 @@
                 font-weight: 100;
             }
     }
-    .restaurant__heart{
-        height: 15px;
-        transform: scaleX(0.9);
-        bottom: 9px;
-        right: 56px;
-        font-size: 28px;
-        position: relative;
-        & i{
-            position: absolute;
-        }
-        
-        .fa-solid{
-            opacity: 0;
-            cursor: pointer;
-            &:hover{
-                background-image: linear-gradient(#ffaae7 0%, #a374dc 100%);
-                background-clip: text;
-                -webkit-background-clip: text;
-                color: transparent;
-                opacity: 1;
-                transition: all 0.4S ease-in-out;
-            }
-            
-            
-        }
     }
     
     }
-}
 
 @media screen and (min-width: $breakpoint-desktop){
     .restaurant{
@@ -110,8 +110,11 @@
                 margin-bottom: 46px;
                 
                 .restaurant__nouveau{
-                    left: 350px;
+                    left: 420px;
                     
+                }
+                .restaurant__heart{
+                    left: 446px;
                 }
             }
         }

@@ -98,16 +98,16 @@
     background-color: $background;
     z-index: 1;
     border-radius: 25px 25px 0px 0px;
+    .menu__h2{
+        margin-bottom: 15px;
+    }
+
     & h2{
         @include text-nobold;
-        margin-left: 17px;
         margin-top: 28px;
         border-bottom: 2px solid $tertiaire-color;
         width: 35px;
         padding-bottom: 2px;
-    }
-    & i{
-        position: absolute;
     }
     .menu__heart{
         height: 12px;
@@ -115,7 +115,12 @@
         font-size: 28px;
         position: relative;
         bottom: 7px;
+        transition: all 0.4S ease-in-out;
+        .fa-sharp{
+            position: absolute;
+        }
         .fa-solid{
+            position: absolute;
             opacity: 0;
             cursor: pointer;
             &:hover{
@@ -132,80 +137,105 @@
         @include flex-center;
         gap: 37px;
         padding-top: 50px;
-        
+        margin-left: 33px;
         & h1{
             @include title-font;
-            font-size: 29px;
+            font-size: 26px;
         }
         
     }
-
-    .menu__cards{
-        background-color: $background-white;
-        height: 70px;
+    .container__cards{
         margin: 15px;
-        border-radius: 18px;
-        @include shadow-style;
-        display: flex;
-        justify-content: space-between;
-            &:hover{
-                .menu__price{
-                    transform: translateX(0px);
-                }
-                & span{
-                    background-color: $tertiaire-color;
-                }
-            }
-        
 
-
-        .menu__secondtitle{
-            display: flex;
-            margin-left: 15px;
-            flex-direction: column;
-            overflow: hidden;
-            text-overflow: ellipsis;
-            white-space: nowrap;
-            & h3{
-                padding: 10px 0px 5px 0px;
-                @include h3;
-            }
-            & p{
-                @include text-nobold;
-            }
-        }
-        .menu__price{
-            display: flex;
-            align-items: center;
-            height: 100%;
-            width: 100px;
-            justify-content: space-between;
-            transform: translateX(42px);
-            transition: all 0.5s;
-
-            & span{
-                display: flex;
-                width: 100%;
-                height: 100%;
-                justify-content: center;
-                align-items: center;
-                border-radius: 0px 18px 18px 0px;
-                .fa-circle-check{
-                    color: $background-white;
-                }
-                
+        @keyframes slideIn{
+            from{
+            opacity:0;
+            transform:translate3d(0, 30px, 0);
             }
             
-            .menu__bold{
-                font-weight: bold;
-                margin-top: 30px;
-                padding-right: 15px;
+            to{
+                opacity:1;
+                transform:translate3d(0,0,0);
+            }
+        }
+    
+    .menu__cards{
+        background-color: #FFFFFF;
+        height: 70px;
+        border-radius: 18px;
+        display: flex;
+        justify-content: space-between;
+        flex-direction: row;
+        @include shadow-style;
+        margin-bottom: 15px;
+        overflow: hidden;
+        animation-name:slideIn;
+        animation-duration:1s;
+        animation-timing-function:ease;
+        animation-fill-mode: both;
+        .menu__content{
+            display: flex;
+            flex-direction: column;
+            width: 100%;
+            text-overflow: ellipsis;
+            overflow: hidden;
+            white-space: nowrap;
+            margin-left: 15px;
+            .menu__secondtitle{
+            
+                h3{
+                    padding: 10px 0px 5px 0px;
+                    @include h3;
+                    text-overflow:ellipsis;
+                    overflow:hidden;
+                    white-space: nowrap;
+                    transition:width ease 0.7s;
+                }
+                
+            }
+            .menu__description{
+                display: flex;
+                justify-content: space-between;
+                text-overflow:ellipsis;
+                overflow:hidden;
+                white-space: nowrap;
+                margin-right: 10px;
+                @include text-nobold;
+
+                & p{
+                    text-overflow:ellipsis;
+                    overflow:hidden;
+                    white-space: nowrap;
+                }
+    
+                .menu__prix{
+                    font-weight: 500;
+                }
+            }
+        }
+        
+        .menu__check{
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            overflow: hidden;
+            margin-right: -50px;
+            border-radius: 0px 15px 15px 0px;
+            width: 50px;
+            transition: all 0.3s ease-out;
+            color: $background-white;
+        }
+        &:hover .menu__check{
+            height: 100%;
+            margin-right: 0px;
+            width: 80px;
+            background-color: $tertiaire-color;
+            transform:rotate(360deg);
+        }
+            }
                 
             }
         }
-    }
-
-}
 .button__div{
     @include flex-center;
     justify-content: center;

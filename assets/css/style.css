@@ -1,7 +1,11 @@
+@charset "UTF-8";
 /** Fonts **/
 /** Colors **/
 /** Size **/
 /** Responsive **/
+/** Forme style **/
+/** Fonctionnement section **/
+/** Restaurant section **/
 /** Fonts style **/
 * {
   box-sizing: border-box;
@@ -18,6 +22,46 @@ main {
   flex-direction: column;
   box-sizing: border-box; }
 
+.loader {
+  background-color: #FFFFFF;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 9999;
+  /* Assure que le loader couvre tout le contenu */
+  animation: fadeOut 2s forwards 2s; }
+
+.spinner {
+  border: 16px solid #FF79DA;
+  /* Couleur de fond de l'anneau */
+  border-top: 16px solid #9356DC;
+  /* Couleur de l'anneau animé */
+  border-radius: 50%;
+  width: 120px;
+  height: 120px;
+  animation: spin 2s linear infinite; }
+
+@keyframes spin {
+  /* Définit une animation appelée spin. */
+  0% {
+    transform: rotate(0deg); }
+  /* Indique que l'élément commence sans rotation au début de l'animation.*/
+  100% {
+    transform: rotate(360deg); }
+  /* Indique que l'élément a effectué une rotation complète (360 degrés) à la fin de l'animation. */ }
+@keyframes fadeOut {
+  0% {
+    opacity: 1; }
+  /* Indique que l'élément commence complètement visible au début de l'animation. */
+  100% {
+    opacity: 0;
+    visibility: hidden; }
+  /* Indique que l'élément devient complètement transparent (invisible) et que sa visibilité est définie sur hidden à la fin de l'animation. */ }
 .header {
   box-shadow: rgba(0, 0, 0, 0.25) 0px 4px 4px 0px;
   flex-direction: column;
@@ -110,7 +154,6 @@ main {
   display: flex;
   align-items: center;
   justify-content: center;
-  align-items: baseline;
   padding: 50px 0px 50px 0px; }
   .functioning ol {
     display: flex;
@@ -124,9 +167,11 @@ main {
     margin-left: 25px;
     flex-direction: column;
     display: flex;
-    align-items: center; }
+    align-items: center;
+    position: relative; }
     .functioning .functioning__container .functioning__item {
       gap: 10px;
+      position: relative;
       gap: 10px;
       width: 91%;
       background-color: #F6F6F6;
@@ -143,7 +188,7 @@ main {
         padding: 7px;
         color: #FFFFFF;
         position: absolute;
-        left: 32px; }
+        left: -10px; }
     .functioning .functioning__container .functioning__txt {
       margin: 19px;
       display: flex;
@@ -161,30 +206,26 @@ main {
 
 @media screen and (min-width: 1024px) {
   .functioning {
-    align-items: normal;
+    align-items: center;
     justify-content: initial;
     padding: 50px 150px;
     background-color: #FFFFFF; }
     .functioning h2 {
       margin: 0; }
     .functioning .functioning__container {
-      display: flex;
       flex-direction: row;
       width: 100%;
       margin: auto;
       justify-content: space-between; }
       .functioning .functioning__container .functioning__item {
-        gap: 10px;
         margin: 15px;
-        width: 318px; }
+        width: 318px;
+        position: relative; }
         .functioning .functioning__container .functioning__item .functioning__number {
-          position: relative;
-          left: -12px; }
+          left: -12px;
+          margin-right: 15px; }
         .functioning .functioning__container .functioning__item .functioning__txt {
-          margin: 0;
-          gap: 17px; }
-          .functioning .functioning__container .functioning__item .functioning__txt i {
-            margin: 0; } }
+          gap: 29px; } }
 .restaurant {
   width: 100%;
   padding-top: 55px;
@@ -204,6 +245,25 @@ main {
       position: relative;
       width: 340px;
       margin-bottom: 35px; }
+      .restaurant .restaurant__container .restaurant__card .restaurant__heart {
+        height: 15px;
+        transform: scaleX(0.9);
+        left: 290px;
+        font-size: 28px;
+        bottom: 53px;
+        position: absolute; }
+        .restaurant .restaurant__container .restaurant__card .restaurant__heart i {
+          position: absolute; }
+        .restaurant .restaurant__container .restaurant__card .restaurant__heart .fa-solid {
+          opacity: 0;
+          cursor: pointer; }
+          .restaurant .restaurant__container .restaurant__card .restaurant__heart .fa-solid:hover {
+            background-image: linear-gradient(#ffaae7 0%, #a374dc 100%);
+            background-clip: text;
+            -webkit-background-clip: text;
+            color: transparent;
+            opacity: 1;
+            transition: all 0.4S ease-in-out; }
   .restaurant a {
     text-decoration: none;
     width: 100%; }
@@ -222,7 +282,7 @@ main {
     font-weight: 400;
     text-decoration: none;
     position: absolute;
-    left: 224px;
+    left: 240px;
     top: 15px; }
   .restaurant .restaurant__description {
     position: relative;
@@ -239,25 +299,6 @@ main {
         margin-bottom: 5px; }
       .restaurant .restaurant__description .restaurant__text div {
         font-weight: 100; }
-    .restaurant .restaurant__description .restaurant__heart {
-      height: 15px;
-      transform: scaleX(0.9);
-      bottom: 9px;
-      right: 56px;
-      font-size: 28px;
-      position: relative; }
-      .restaurant .restaurant__description .restaurant__heart i {
-        position: absolute; }
-      .restaurant .restaurant__description .restaurant__heart .fa-solid {
-        opacity: 0;
-        cursor: pointer; }
-        .restaurant .restaurant__description .restaurant__heart .fa-solid:hover {
-          background-image: linear-gradient(#ffaae7 0%, #a374dc 100%);
-          background-clip: text;
-          -webkit-background-clip: text;
-          color: transparent;
-          opacity: 1;
-          transition: all 0.4S ease-in-out; }
 
 @media screen and (min-width: 1024px) {
   .restaurant {
@@ -277,7 +318,9 @@ main {
         width: 521px;
         margin-bottom: 46px; }
         .restaurant .restaurant__container .restaurant__card .restaurant__nouveau {
-          left: 350px; } }
+          left: 420px; }
+        .restaurant .restaurant__container .restaurant__card .restaurant__heart {
+          left: 446px; } }
 .footer {
   background-color: #353535; }
   .footer img {
@@ -305,12 +348,227 @@ main {
     font-weight: 400;
     text-decoration: none; }
   .footer #footer__mention {
-    font-size: 15px;
+    font-size: 16px;
     font-weight: 100;
     font-family: "Roboto", sans-serif; }
   .footer #footer__contact {
-    font-size: 15px;
+    font-size: 16px;
     font-weight: 100;
     font-family: "Roboto", sans-serif; }
+
+/** Header section **/
+@media screen and (min-width: 1024px) {
+  main {
+    background-color: #FFFFFF; }
+
+  .header__menu #header__photo img {
+    height: 340px; }
+
+  .container__menu {
+    margin: auto;
+    width: 75%;
+    margin-top: 115px; }
+    .container__menu .title__menu {
+      gap: 25px;
+      display: flex;
+      justify-content: center; }
+      .container__menu .title__menu h1 {
+        font-size: 22px; }
+
+  .menu__h2 {
+    padding-right: 525px; }
+
+  .container__cards {
+    display: flex;
+    flex-direction: column;
+    align-items: center; }
+
+  .menu__cards {
+    width: 550px; }
+
+  .footer {
+    display: flex;
+    flex-direction: row-reverse;
+    padding-top: 24px;
+    padding-right: 26px; }
+    .footer img {
+      margin-top: 0px; }
+
+  .button__div .button {
+    padding: 15px 40px 15px 40px;
+    margin-top: 41px;
+    margin-bottom: 41px; } }
+/** Mobile Version **/
+.header__menu {
+  box-shadow: none;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  height: 237px;
+  padding-top: 20px;
+  background-color: #FFFFFF; }
+  .header__menu .header__logo__arrow {
+    display: flex;
+    align-items: center; }
+    .header__menu .header__logo__arrow i {
+      position: absolute;
+      left: 24px;
+      font-size: 20px;
+      top: 27px;
+      text-decoration: none;
+      color: #353535; }
+
+#header__arrow {
+  display: none; }
+
+#header__photo {
+  margin-top: 11px;
+  width: 100%; }
+  #header__photo img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover; }
+
+/** Menu section **/
+.container__menu {
+  background-color: #F6F6F6;
+  z-index: 1;
+  border-radius: 25px 25px 0px 0px; }
+  .container__menu .menu__h2 {
+    margin-bottom: 15px; }
+  .container__menu h2 {
+    font-size: 16px;
+    font-weight: 100;
+    font-family: "Roboto", sans-serif;
+    margin-top: 28px;
+    border-bottom: 2px solid #99E2D0;
+    width: 35px;
+    padding-bottom: 2px; }
+  .container__menu .menu__heart {
+    height: 12px;
+    transform: scaleX(0.9);
+    font-size: 28px;
+    position: relative;
+    bottom: 7px;
+    transition: all 0.4S ease-in-out; }
+    .container__menu .menu__heart .fa-sharp {
+      position: absolute; }
+    .container__menu .menu__heart .fa-solid {
+      position: absolute;
+      opacity: 0;
+      cursor: pointer; }
+      .container__menu .menu__heart .fa-solid:hover {
+        background-image: linear-gradient(#ffaae7 0%, #a374dc 100%);
+        background-clip: text;
+        -webkit-background-clip: text;
+        color: transparent;
+        opacity: 1;
+        transition: all 0.4S ease-in-out; }
+  .container__menu .title__menu {
+    display: flex;
+    align-items: center;
+    gap: 37px;
+    padding-top: 50px;
+    margin-left: 33px; }
+    .container__menu .title__menu h1 {
+      font-family: "Shrikhand", cursive;
+      font-size: 22px;
+      font-size: 26px; }
+  .container__menu .container__cards {
+    margin: 15px; }
+@keyframes slideIn {
+  from {
+    opacity: 0;
+    transform: translate3d(0, 30px, 0); }
+  to {
+    opacity: 1;
+    transform: translate3d(0, 0, 0); } }
+    .container__menu .container__cards .menu__cards {
+      background-color: #FFFFFF;
+      height: 70px;
+      border-radius: 18px;
+      display: flex;
+      justify-content: space-between;
+      flex-direction: row;
+      box-shadow: 0px 5px 10px 0px #8a8a8a52;
+      margin-bottom: 15px;
+      overflow: hidden;
+      animation-name: slideIn;
+      animation-duration: 1s;
+      animation-timing-function: ease;
+      animation-fill-mode: both; }
+      .container__menu .container__cards .menu__cards .menu__content {
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+        text-overflow: ellipsis;
+        overflow: hidden;
+        white-space: nowrap;
+        margin-left: 15px; }
+        .container__menu .container__cards .menu__cards .menu__content .menu__secondtitle h3 {
+          padding: 10px 0px 5px 0px;
+          font-size: 18px;
+          font-weight: 400;
+          text-overflow: ellipsis;
+          overflow: hidden;
+          white-space: nowrap;
+          transition: width ease 0.7s; }
+        .container__menu .container__cards .menu__cards .menu__content .menu__description {
+          display: flex;
+          justify-content: space-between;
+          text-overflow: ellipsis;
+          overflow: hidden;
+          white-space: nowrap;
+          margin-right: 10px;
+          font-size: 16px;
+          font-weight: 100;
+          font-family: "Roboto", sans-serif; }
+          .container__menu .container__cards .menu__cards .menu__content .menu__description p {
+            text-overflow: ellipsis;
+            overflow: hidden;
+            white-space: nowrap; }
+          .container__menu .container__cards .menu__cards .menu__content .menu__description .menu__prix {
+            font-weight: 500; }
+      .container__menu .container__cards .menu__cards .menu__check {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        overflow: hidden;
+        margin-right: -50px;
+        border-radius: 0px 15px 15px 0px;
+        width: 50px;
+        transition: all 0.3s ease-out;
+        color: #FFFFFF; }
+      .container__menu .container__cards .menu__cards:hover .menu__check {
+        height: 100%;
+        margin-right: 0px;
+        width: 80px;
+        background-color: #99E2D0;
+        transform: rotate(360deg); }
+
+.button__div {
+  display: flex;
+  align-items: center;
+  justify-content: center; }
+  .button__div .button {
+    border: none;
+    border-radius: 25px;
+    color: white;
+    background: linear-gradient(#FF79DA 0%, #9356DC 100%);
+    font-size: 15px;
+    font-weight: 400;
+    text-decoration: none;
+    box-shadow: 0px 5px 10px 0px #8a8a8a52;
+    padding: 15px 40px 15px 40px;
+    margin-top: 41px;
+    margin-bottom: 41px;
+    transition: all 1s; }
+    .button__div .button:hover {
+      opacity: 0.7;
+      transform: scale(1);
+      box-shadow: 0px 10px 15px 0px #8a8a8aa0; }
+
+.footer {
+  padding-bottom: 20px; }
 
 /*# sourceMappingURL=style.css.map */

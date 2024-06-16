@@ -3,7 +3,6 @@
     flex-direction: column;
     @include flex-center;
     justify-content: center;
-    align-items: baseline;
     padding: 50px 0px 50px 0px;
     
 
@@ -20,9 +19,11 @@
         margin-left: 25px;
         flex-direction: column;
         @include flex-center;
+        position: relative;
 
         .functioning__item{
             gap: 10px;
+            position: relative;
             @include functioning-style;
             @include shadow-style;
     
@@ -49,7 +50,7 @@
 }
 @media screen and (min-width: $breakpoint-desktop){
     .functioning{
-        align-items: normal;
+        align-items: center;
         justify-content: initial;
         padding: 50px 150px;
         background-color: $background-white;
@@ -59,26 +60,20 @@
         }
 
         .functioning__container{
-            display: flex;
             flex-direction: row;
             width: 100%;
             margin: auto;
             justify-content: space-between;
             .functioning__item{
-                gap: 10px;
                 margin: 15px;
                 width: 318px;
+                position: relative;
                 .functioning__number{
-                    position: relative;
                     left: -12px;
+                    margin-right: 15px;
                 }
                 .functioning__txt{
-                    margin: 0;
-                    gap: 17px;
-
-                    & i{
-                        margin: 0;
-                    }
+                    gap: 29px;
                 }
             }
         }
