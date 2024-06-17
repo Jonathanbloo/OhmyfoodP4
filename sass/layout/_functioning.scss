@@ -1,9 +1,13 @@
 .functioning{
     background-color: $background-white;
     flex-direction: column;
-    @include flex-center;
-    justify-content: center;
+    display: flex;
     padding: 50px 0px 50px 0px;
+
+    & h2{
+        margin-left: 12px;
+        margin-bottom: 12px;
+    }
     
 
     & ol {
@@ -16,13 +20,13 @@
     }
 
     .functioning__container{
-        margin-left: 25px;
         flex-direction: column;
         @include flex-center;
         position: relative;
+        justify-content: space-between;
+        height: 287px;
 
         .functioning__item{
-            gap: 10px;
             position: relative;
             @include functioning-style;
             @include shadow-style;
@@ -50,13 +54,12 @@
 }
 @media screen and (min-width: $breakpoint-desktop){
     .functioning{
-        align-items: center;
         justify-content: initial;
         padding: 50px 150px;
         background-color: $background-white;
 
         & h2{
-            margin: 0;
+            margin-left: 0px;
         }
 
         .functioning__container{
@@ -64,6 +67,7 @@
             width: 100%;
             margin: auto;
             justify-content: space-between;
+            height: 100px;
             .functioning__item{
                 margin: 15px;
                 width: 318px;

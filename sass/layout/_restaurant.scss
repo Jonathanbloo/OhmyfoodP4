@@ -3,7 +3,9 @@
     @include padding-section;
 
     & h2{
-        padding: 15px;
+        display: flex;
+        justify-content: center;
+        margin: 0px 217px 10px 0px;
     }
     .restaurant__container{
         display: flex;
@@ -86,7 +88,16 @@
     }
     
     }
-
+@media screen and (min-width: $breakpoint-tablet){
+    
+        .restaurant{
+            & h2{
+                justify-content:center;
+                padding: 15px 0px 15px 0px;
+            }
+        
+    }
+    }
 @media screen and (min-width: $breakpoint-desktop){
     .restaurant{
         padding: 52px 150px 0px 150px;
@@ -95,8 +106,10 @@
     
 
         & h2{
+            display: flex;
             margin: 0;
             padding: 0px 0px 30px 0px;
+            justify-content: flex-start;
         }
         
         .restaurant__container{

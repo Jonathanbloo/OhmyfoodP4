@@ -152,9 +152,10 @@ main {
   background-color: #FFFFFF;
   flex-direction: column;
   display: flex;
-  align-items: center;
-  justify-content: center;
   padding: 50px 0px 50px 0px; }
+  .functioning h2 {
+    margin-left: 12px;
+    margin-bottom: 12px; }
   .functioning ol {
     display: flex;
     align-items: center;
@@ -164,13 +165,13 @@ main {
     padding: 0;
     gap: 10px; }
   .functioning .functioning__container {
-    margin-left: 25px;
     flex-direction: column;
     display: flex;
     align-items: center;
-    position: relative; }
+    position: relative;
+    justify-content: space-between;
+    height: 287px; }
     .functioning .functioning__container .functioning__item {
-      gap: 10px;
       position: relative;
       gap: 10px;
       width: 91%;
@@ -178,7 +179,6 @@ main {
       height: 80px;
       border-radius: 25px;
       counter-increment: item;
-      margin: 34px 34px -10px 42px;
       display: flex;
       align-items: center;
       box-shadow: 0px 5px 10px 0px #8a8a8a52; }
@@ -206,17 +206,17 @@ main {
 
 @media screen and (min-width: 1024px) {
   .functioning {
-    align-items: center;
     justify-content: initial;
     padding: 50px 150px;
     background-color: #FFFFFF; }
     .functioning h2 {
-      margin: 0; }
+      margin-left: 0px; }
     .functioning .functioning__container {
       flex-direction: row;
       width: 100%;
       margin: auto;
-      justify-content: space-between; }
+      justify-content: space-between;
+      height: 100px; }
       .functioning .functioning__container .functioning__item {
         margin: 15px;
         width: 318px;
@@ -231,7 +231,9 @@ main {
   padding-top: 55px;
   padding-bottom: 55px; }
   .restaurant h2 {
-    padding: 15px; }
+    display: flex;
+    justify-content: center;
+    margin: 0px 217px 10px 0px; }
   .restaurant .restaurant__container {
     display: flex;
     flex-direction: column;
@@ -300,14 +302,20 @@ main {
       .restaurant .restaurant__description .restaurant__text div {
         font-weight: 100; }
 
+@media screen and (min-width: 768px) {
+  .restaurant h2 {
+    justify-content: center;
+    padding: 15px 0px 15px 0px; } }
 @media screen and (min-width: 1024px) {
   .restaurant {
     padding: 52px 150px 0px 150px;
     margin: 0 auto;
     background-color: #F6F6F6; }
     .restaurant h2 {
+      display: flex;
       margin: 0;
-      padding: 0px 0px 30px 0px; }
+      padding: 0px 0px 30px 0px;
+      justify-content: flex-start; }
     .restaurant .restaurant__container {
       display: flex;
       flex-direction: row;
