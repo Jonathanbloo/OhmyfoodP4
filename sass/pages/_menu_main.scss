@@ -150,12 +150,12 @@
         @keyframes slideIn{
             from{
             opacity:0;
-            transform:translate3d(0, 30px, 0);
+            transform:translate3d(0, 30px, 0); //L'élément est déplacé de 30 pixels vers le bas (sur l'axe Y).
             }
             
             to{
                 opacity:1;
-                transform:translate3d(0,0,0);
+                transform:translate3d(0,0,0); //L'élément revient à sa position d'origine.
             }
         }
     
@@ -169,10 +169,10 @@
         @include shadow-style;
         margin-bottom: 15px;
         overflow: hidden;
-        animation-name:slideIn;
+        animation-name:slideIn; //Utilise l'animation définie par @keyframes slideIn
         animation-duration:1s;
-        animation-timing-function:ease;
-        animation-fill-mode: both;
+        animation-timing-function:ease; //L'animation commence lentement, accélère au milieu et ralentit à la fin.
+        animation-fill-mode: both; //l'élément retiendra les styles définis dans la première et la dernière image clé de l'animation
         .menu__content{
             display: flex;
             flex-direction: column;
@@ -230,7 +230,6 @@
             margin-right: 0px;
             width: 80px;
             background-color: $tertiaire-color;
-            transform:rotate(360deg);
         }
             }
                 

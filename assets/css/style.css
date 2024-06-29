@@ -174,7 +174,7 @@ main {
     .functioning .functioning__container .functioning__item {
       position: relative;
       gap: 10px;
-      width: 91%;
+      width: 280px;
       background-color: #F6F6F6;
       height: 80px;
       border-radius: 25px;
@@ -551,8 +551,7 @@ main {
         height: 100%;
         margin-right: 0px;
         width: 80px;
-        background-color: #99E2D0;
-        transform: rotate(360deg); }
+        background-color: #99E2D0; }
 
 .button__div {
   display: flex;

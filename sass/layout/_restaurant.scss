@@ -37,10 +37,10 @@
                     &:hover{
                         background-image: linear-gradient(#ffaae7 0%, #a374dc 100%);
                         background-clip: text;
-                        -webkit-background-clip: text;
+                        -webkit-background-clip: text; //signifie que le fond sera visible uniquement à travers les lettres du texte, créant un effet où le texte semble avoir un remplissage de fond
                         color: transparent;
                         opacity: 1;
-                        transition: all 0.4S ease-in-out;
+                        transition: all 0.4S ease-in-out; //(ease-in-out) la transition commencera lentement, accélérera au milieu, puis ralentira à nouveau vers la fin
                     }
                     
                     
