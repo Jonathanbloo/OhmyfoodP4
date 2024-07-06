@@ -44,6 +44,17 @@
 
         & img{
             margin-top: 0px;
+            margin-left: 100px;
+        }
+        .footer__mentioncontact{
+            display: flex;
+        }
+        .footer__proposerpartenaire{
+            display: flex;
+            margin-right: 45px;
+        }
+        .footer__reverve{
+            display: flex;
         }
     }
     .button__div{
@@ -54,7 +65,10 @@
         }
     }
 }
-
+.footer{
+    padding-bottom: 30px;
+    padding-top: 74px;
+}
 /** Mobile Version **/
 
 .header__menu{
