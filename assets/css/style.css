@@ -402,7 +402,9 @@ main {
     display: flex;
     flex-direction: row-reverse;
     padding-top: 24px;
-    padding-right: 26px; }
+    padding-right: 26px;
+    padding-bottom: 30px;
+    padding-top: 74px; }
     .footer img {
       margin-top: 0px;
       margin-left: 100px; }
@@ -418,10 +420,6 @@ main {
     padding: 15px 40px 15px 40px;
     margin-top: 41px;
     margin-bottom: 41px; } }
-.footer {
-  padding-bottom: 30px;
-  padding-top: 74px; }
-
 /** Mobile Version **/
 .header__menu {
   box-shadow: none;

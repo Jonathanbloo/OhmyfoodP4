@@ -41,6 +41,10 @@
         flex-direction: row-reverse;
         padding-top: 24px;
         padding-right: 26px;
+        
+        padding-bottom: 30px;
+        padding-top: 74px;
+        
 
         & img{
             margin-top: 0px;
@@ -65,10 +69,7 @@
         }
     }
 }
-.footer{
-    padding-bottom: 30px;
-    padding-top: 74px;
-}
+
 /** Mobile Version **/
 
 .header__menu{
